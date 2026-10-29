@@ -19,12 +19,27 @@ namespace RestaurantAPP
                 new Restaurant(4, "Huguosi Snacks", "Snacks", 4.2),
                 new Restaurant(5, "Haidilao Hot Pot", "Hot Pot", 4.8)
              };
+
                 foreach (Restaurant restaurant in restaurants)
                 {
                     Console.WriteLine(
                         $"{restaurant.Id} | {restaurant.Name} | {restaurant.Type} | {restaurant.Rating}"
                     );
                 }
+
+                Console.WriteLine("-----------------------------");
+                Console.WriteLine($"Total restaurants: {restaurants.Count}");
+
+                double average = 0;
+
+                foreach (Restaurant restaurant in restaurants)
+                {
+                    average += restaurant.Rating;
+                }
+
+                average /= restaurants.Count;
+
+                Console.WriteLine($"Average rating: {average:F2}");
             }
 
 
